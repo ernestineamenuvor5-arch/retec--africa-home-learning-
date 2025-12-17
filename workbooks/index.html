@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Workbooks - RETEC Africa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            color: #006B3F;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #CE1126;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .ghana-flag {
+            font-size: 40px;
+            margin-top: 15px;
+        }
+
+        .workbooks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .workbook-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 5px solid #FCD116;
+        }
+
+        .workbook-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .workbook-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .workbook-card h2 {
+            font-size: 28px;
+            color: #006B3F;
+            margin-bottom: 10px;
+        }
+
+        .workbook-weeks {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .workbook-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 15px;
+        }
+
+        .topics-list {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .topics-list h4 {
+            color: #CE1126;
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .topics-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .topics-list li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .topics-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #006B3F;
+            font-weight: bold;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            flex: 1;
+            min-width: 140px;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-interactive {
+            background: linear-gradient(135deg, #006B3F, #00a86b);
+            color: white;
+        }
+
+        .btn-interactive:hover {
+            background: linear-gradient(135deg, #00a86b, #006B3F);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,107,63,0.3);
+        }
+
+        .btn-pdf {
+            background: linear-gradient(135deg, #CE1126, #ff1744);
+            color: white;
+        }
+
+        .btn-pdf:hover {
+            background: linear-gradient(135deg, #ff1744, #CE1126);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(206,17,38,0.3);
+        }
+
+        .btn-coming {
+            background: #e9ecef;
+            color: #999;
+            cursor: not-allowed;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
+
+        .status-available {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-coming {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .info-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .info-section h3 {
+            color: #006B3F;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #FCD116;
+        }
+
+        .info-card h4 {
+            color: #CE1126;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #006B3F;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #006B3F;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            color: #00a86b;
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .workbooks-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="/" class="back-link">← Back to Home</a>
+
+    <header>
+        <div class="logo">RETEC AFRICA</div>
+        <h1>Learning Workbooks</h1>
+        <p class="subtitle">Career-focused, GES-aligned learning resources for Ghanaian JHS students</p>
+        <div class="ghana-flag">🇬🇭</div>
+    </header>
+
+    <div class="workbooks-grid">
+        
+        <!-- Entrepreneurship Workbook -->
+        <div class="workbook-card">
+            <div class="workbook-icon">💼</div>
+            <span class="status-badge status-available">Available Now</span>
+            <h2>Entrepreneurship & Start-Up</h2>
+            <div class="workbook-weeks">Weeks 1-2 of 10</div>
+            <p class="workbook-description">
+                Learn to identify business opportunities, understand customer needs, collect data, and pitch your ideas with confidence.
+            </p>
+            <div class="topics-list">
+                <h4>What You'll Learn:</h4>
+                <ul>
+                    <li>Who entrepreneurs are</li>
+                    <li>Types of businesses</li>
+                    <li>Finding problems to solve</li>
+                    <li>Needs vs. wants</li>
+                    <li>Simple surveys & data collection</li>
+                    <li>Creating a business pitch</li>
+                </ul>
+            </div>
+            <div class="button-group">
+                <a href="entrepreneurship/week1-2.html" class="btn btn-interactive" target="_blank">
+                    📱 Interactive Version
+                </a>
+                <a href="entrepreneurship/week1-2.html" class="btn btn-pdf" onclick="window.open(this.href); setTimeout(() => window.print(), 500); return false;">
+                    📥 Download PDF
+                </a>
+            </div>
+        </div>
+
+        <!-- Entrepreneurship Weeks 3-4 -->
+        <div class="workbook-card">
+            <div class="workbook-icon">💰</div>
+            <span class="status-badge status-coming">Coming Soon</span>
+            <h2>Entrepreneurship & Start-Up</h2>
+            <div class="workbook-weeks">Weeks 3-4 of 10</div>
+            <p class="workbook-description">
+                Master budgeting, pricing strategies, product design, and branding to bring your business idea to life.
+            </p>
+            <div class="topics-list">
+                <h4>What You'll Learn:</h4>
+                <ul>
+                    <li>Creating budgets</li>
+                    <li>Calculating costs & profits</li>
+                    <li>Product design basics</li>
+                    <li>Branding & naming</li>
+                    <li>Logo creation</li>
+                    <li>Pricing strategies</li>
+                </ul>
+            </div>
+            <div class="button-group">
+                <button class="btn btn-coming">
+                    Coming Soon
+                </button>
+            </div>
+        </div>
+
+        <!-- Engineering Workbook -->
+        <div class="workbook-card">
+            <div class="workbook-icon">⚙️</div>
+            <span class="status-badge status-available">Available Now</span>
+            <h2>Engineering & Technology</h2>
+            <div class="workbook-weeks">Weeks 1-2 of 10</div>
+            <p class="workbook-description">
+                Discover different types of engineers, explore engineering around you, and learn problem-solving like an engineer.
+            </p>
+            <div class="topics-list">
+                <h4>What You'll Learn:</h4>
+                <ul>
+                    <li>What is engineering?</li>
+                    <li>Types of engineers</li>
+                    <li>Engineering around us</li>
+                    <li>Problem-solving process</li>
+                    <li>Design thinking</li>
+                    <li>Engineering careers in Ghana</li>
+                </ul>
+            </div>
+            <div class="button-group">
+                <a href="engineering/week1-2.html" class="btn btn-interactive" target="_blank">
+                    📱 Interactive Version
+                </a>
+                <a href="engineering/week1-2.html" class="btn btn-pdf" onclick="window.open(this.href); setTimeout(() => window.print(), 500); return false;">
+                    📥 Download PDF
+                </a>
+            </div>
+        </div>
+
+        <!-- More Career Paths Coming -->
+        <div class="workbook-card">
+            <div class="workbook-icon">🏥</div>
+            <span class="status-badge status-coming">Coming Soon</span>
+            <h2>Healthcare & Medicine</h2>
+            <div class="workbook-weeks">Weeks 1-2 of 10</div>
+            <p class="workbook-description">
+                Explore healthcare careers, understand human anatomy basics, and learn about medical innovation in Africa.
+            </p>
+            <div class="topics-list">
+                <h4>What You'll Learn:</h4>
+                <ul>
+                    <li>Healthcare careers</li>
+                    <li>Basic anatomy</li>
+                    <li>Medical terminology</li>
+                    <li>Public health in Ghana</li>
+                    <li>Healthcare innovation</li>
+                    <li>Path to medical school</li>
+                </ul>
+            </div>
+            <div class="button-group">
+                <button class="btn btn-coming">
+                    Coming Soon
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="info-section">
+        <h3>How to Use These Workbooks</h3>
+        <div class="info-grid">
+            <div class="info-card">
+                <h4>📱 Interactive Version</h4>
+                <p>Open directly in your browser. Perfect for filling out on computer or tablet. You can type your answers and see everything clearly.</p>
+            </div>
+            <div class="info-card">
+                <h4>📥 PDF Version</h4>
+                <p>Download and print for physical use. Great for students without constant internet access. Fill in by hand with pen or pencil.</p>
+            </div>
+            <div class="info-card">
+                <h4>📚 GES Aligned</h4>
+                <p>All content follows Ghana Education Service curriculum standards for JHS 1-3, integrating Social Studies, Math, ICT, and Career Technology.</p>
+            </div>
+            <div class="info-card">
+                <h4>🏠 Home-Based Learning</h4>
+                <p>Designed for independent study with parent/tutor support. Includes conversation starters and guidance for mentors.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>RETEC AFRICA</strong> • Building Ghana's Next Generation of Innovators</p>
+        <p><a href="https://retec-africa.netlify.app">retec-africa.netlify.app</a></p>
+    </footer>
+
+</div>
+
+</body>
+</html>
