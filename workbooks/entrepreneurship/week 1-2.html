@@ -1,0 +1,2228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrepreneurship & Start-Up Workbook - JHS Ghana</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+        
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.5;
+            color: #1a1a1a;
+            background: #f5f5f5;
+        }
+        
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 0 auto 10px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            page-break-after: always;
+            position: relative;
+        }
+        
+        /* Cover Page */
+        .cover-page {
+            background: linear-gradient(135deg, #CE1126 0%, #FCD116 50%, #006B3F 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 40mm 20mm;
+        }
+        
+        .cover-logo {
+            background: white;
+            color: #006B3F;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            letter-spacing: 2px;
+        }
+        
+        .cover-page h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+        
+        .cover-page h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .cover-subtitle {
+            font-size: 22px;
+            font-weight: 300;
+            margin-bottom: 50px;
+            opacity: 0.95;
+        }
+        
+        .cover-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 600px;
+            margin: 30px 0;
+        }
+        
+        .feature-badge {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .feature-badge .icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .feature-badge .text {
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .career-glimpse-box {
+            background: rgba(0,0,0,0.2);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 40px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .career-glimpse-box h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #FCD116;
+        }
+        
+        .career-glimpse-box p {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        /* Week Header */
+        .week-intro {
+            background: linear-gradient(135deg, #CE1126, #FCD116);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .week-intro::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+        
+        .week-intro .week-number {
+            font-size: 72px;
+            font-weight: 800;
+            opacity: 0.2;
+            position: absolute;
+            top: -10px;
+            right: 30px;
+        }
+        
+        .week-intro h1 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        
+        .week-intro h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .week-intro .theme {
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .career-glimpse {
+            background: rgba(255,255,255,0.2);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .career-glimpse strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+        
+        /* Day Header */
+        .day-section {
+            margin-bottom: 40px;
+        }
+        
+        .day-header {
+            background: linear-gradient(135deg, #006B3F, #00a86b);
+            color: white;
+            padding: 25px 30px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .day-number {
+            font-size: 48px;
+            font-weight: 800;
+            background: rgba(255,255,255,0.2);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            flex-shrink: 0;
+        }
+        
+        .day-title {
+            flex: 1;
+        }
+        
+        .day-title h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .day-title .subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        /* Learning Goal */
+        .learning-goal {
+            background: linear-gradient(135deg, #FCD116, #ffed4e);
+            color: #1a1a1a;
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 6px solid #CE1126;
+            box-shadow: 0 4px 15px rgba(252,209,22,0.3);
+        }
+        
+        .learning-goal .label {
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #CE1126;
+            margin-bottom: 8px;
+        }
+        
+        .learning-goal .goal-text {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        
+        /* Definitions Box */
+        .definitions {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 2px solid #e9ecef;
+        }
+        
+        .definitions h3 {
+            color: #006B3F;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .definition-item {
+            margin-bottom: 15px;
+            padding: 12px 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #FCD116;
+        }
+        
+        .definition-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .def-term {
+            font-weight: 700;
+            color: #CE1126;
+            font-size: 15px;
+        }
+        
+        .def-meaning {
+            color: #333;
+            margin-left: 5px;
+            font-size: 14px;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 25px;
+        }
+        
+        .section-header {
+            color: #006B3F;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #FCD116;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Step Boxes */
+        .step-box {
+            background: white;
+            border: 2px solid #006B3F;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .step-title {
+            color: #CE1126;
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .step-content {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #333;
+        }
+        
+        .step-content ul {
+            margin: 12px 0 12px 20px;
+        }
+        
+        .step-content li {
+            margin-bottom: 8px;
+        }
+        
+        .step-content strong {
+            color: #006B3F;
+        }
+        
+        /* Options Grid */
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .option-box {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 18px;
+            border-radius: 10px;
+            border-left: 5px solid #FCD116;
+            transition: transform 0.2s;
+        }
+        
+        .option-box:hover {
+            transform: translateY(-2px);
+        }
+        
+        .option-label {
+            font-weight: 700;
+            color: #CE1126;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+        
+        .option-text {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Tip Box */
+        .tip-box {
+            background: linear-gradient(135deg, #fff9e6, #fffbf0);
+            border: 2px dashed #FCD116;
+            padding: 18px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .tip-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        
+        .tip-content {
+            flex: 1;
+        }
+        
+        .tip-label {
+            font-weight: 700;
+            color: #CE1126;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .tip-text {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Career Nugget */
+        .career-nugget {
+            background: linear-gradient(135deg, #006B3F, #00a86b);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .career-nugget::before {
+            content: '💼';
+            position: absolute;
+            font-size: 120px;
+            opacity: 0.1;
+            top: -20px;
+            right: -10px;
+        }
+        
+        .career-nugget-header {
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #FCD116;
+            margin-bottom: 12px;
+        }
+        
+        .career-nugget-text {
+            font-size: 15px;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .career-nugget-text strong {
+            color: #FCD116;
+        }
+        
+        /* Work Area */
+        .work-area {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border: 3px solid #006B3F;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            min-height: 180px;
+        }
+        
+        .work-area-header {
+            color: #CE1126;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .work-space {
+            background: white;
+            min-height: 120px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .work-space-hint {
+            text-align: center;
+            color: #999;
+            font-style: italic;
+            font-size: 14px;
+        }
+        
+        .work-lines {
+            border-bottom: 1px solid #ddd;
+            height: 35px;
+            margin: 10px 0;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: white;
+        }
+        
+        table th {
+            background: #006B3F;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        table td {
+            border: 1px solid #e9ecef;
+            padding: 15px;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        /* Reflection Box */
+        .reflection-box {
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+            border: 3px solid #006B3F;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        
+        .reflection-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .reflection-icon {
+            font-size: 28px;
+        }
+        
+        .reflection-label {
+            font-weight: 700;
+            color: #CE1126;
+            font-size: 17px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .reflection-prompt {
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        /* Parent Section */
+        .parent-section {
+            background: linear-gradient(135deg, #fff9e6, #fffef0);
+            border: 3px solid #FCD116;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        
+        .parent-section-header {
+            color: #CE1126;
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .conversation-item {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #333;
+        }
+        
+        .conversation-item::before {
+            content: '💬';
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+        }
+        
+        /* Checklist */
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist-item {
+            padding: 10px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .checklist-item::before {
+            content: '☐';
+            position: absolute;
+            left: 0;
+            font-size: 22px;
+            color: #006B3F;
+        }
+        
+        /* Summary Box */
+        .summary-box {
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+            border: 4px solid #006B3F;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .summary-header {
+            color: #CE1126;
+            font-size: 24px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .summary-content {
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        
+        .summary-list {
+            margin: 15px 0 15px 25px;
+        }
+        
+        .summary-list li {
+            margin-bottom: 10px;
+        }
+        
+        .summary-list strong {
+            color: #006B3F;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+            border-top: 3px solid #FCD116;
+            color: #666;
+        }
+        
+        .footer-logo {
+            font-weight: 800;
+            color: #006B3F;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        .footer-tagline {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .footer-website {
+            font-size: 13px;
+            color: #999;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .page {
+                box-shadow: none;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="page cover-page">
+    <div class="cover-logo">RETEC AFRICA</div>
+    <h1>ENTREPRENEURSHIP</h1>
+    <h2>& START-UP</h2>
+    <div class="cover-subtitle">Home-Based Learning Workbook for Junior High School</div>
+    
+    <div class="cover-features">
+        <div class="feature-badge">
+            <div class="icon">🇬🇭</div>
+            <div class="text">Built for<br>Ghana</div>
+        </div>
+        <div class="feature-badge">
+            <div class="icon">📚</div>
+            <div class="text">GES Curriculum<br>Aligned</div>
+        </div>
+        <div class="feature-badge">
+            <div class="icon">🚀</div>
+            <div class="text">Career-Focused<br>Learning</div>
+        </div>
+    </div>
+    
+    <div class="career-glimpse-box">
+        <h3>Career Paths You'll Explore:</h3>
+        <p>Market Trader • Mobile Money Agent • Fashion Designer<br>
+        Food Vendor • Agribusiness Owner • Tech Innovator • Product Developer</p>
+    </div>
+</div>
+
+<!-- ==================== WEEK 1 ==================== -->
+<div class="page">
+    <div class="week-intro">
+        <div class="week-number">01</div>
+        <h1>Week 1</h1>
+        <h2>WHAT IS ENTREPRENEURSHIP?</h2>
+        <div class="theme">Discovering who entrepreneurs are and what they do</div>
+        <div class="career-glimpse">
+            <strong>Career Glimpse:</strong>
+            Market Seller | Mobile Money Agent | Seamstress | Food Vendor | Tech Innovator
+        </div>
+    </div>
+</div>
+
+<!-- WEEK 1 - DAY 1 -->
+<div class="page">
+    <div class="day-section">
+        <div class="day-header">
+            <div class="day-number">01</div>
+            <div class="day-title">
+                <h2>Who Are Entrepreneurs?</h2>
+            </div>
+        </div>
+
+        <div class="learning-goal">
+            <div class="label">Learning Goal</div>
+            <div class="goal-text">Today, I will discover what entrepreneurship means, identify entrepreneurs around me, and understand how they help our community.</div>
+        </div>
+
+        <div class="definitions">
+            <h3>Quick Definitions</h3>
+            <div class="definition-item">
+                <span class="def-term">Entrepreneur:</span>
+                <span class="def-meaning">A person who starts their own business to solve problems and earn money.</span>
+            </div>
+            <div class="definition-item">
+                <span class="def-term">Business:</span>
+                <span class="def-meaning">Selling goods or services to customers who need them.</span>
+            </div>
+            <div class="definition-item">
+                <span class="def-term">Customer:</span>
+                <span class="def-meaning">A person who buys what you are selling.</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">Discovery Steps</div>
+
+            <div class="step-box">
+                <div class="step-title">ENGAGE - Think & Discuss</div>
+                <div class="step-content">
+                    Look around your community. Point out 3 people who own their own businesses (market seller, barber, seamstress, pure water seller, food vendor, mobile money agent).
+                </div>
+            </div>
+
+            <div class="step-box">
+                <div class="step-title">EXPLORE - My Activity Choices</div>
+                <div class="options-grid">
+                    <div class="option-box">
+                        <div class="option-label">Option A:</div>
+                        <div class="option-text">Draw 3 business owners you know and label what they sell.</div>
+                    </div>
+                    <div class="option-box">
+                        <div class="option-label">Option B:</div>
+                        <div class="option-text">Write a list of 3 business owners and explain how they help people in your community.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- WEEK 1 - DAY 1 CONTINUED -->
+<div class="page">
+    <div class="step-box">
+        <div class="step-title">EXPLAIN - Learn Together</div>
+        <div class="step-content">
+            <p>Entrepreneurs see problems and create solutions that people will pay for.</p>
+            <p style="margin-top: 15px;"><strong>Examples of Ghanaian entrepreneurs:</strong></p>
+            <ul>
+                <li><strong>Market seller</strong> – sells vegetables and provisions</li>
+                <li><strong>Seamstress</strong> – sews clothes and school uniforms</li>
+                <li><strong>Barber</strong> – provides haircuts and grooming</li>
+                <li><strong>Food vendor</strong> – cooks and sells meals</li>
+                <li><strong>Mobile money agent</strong> – helps people send and receive money</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div class="tip-content">
+            <div class="tip-label">Tip:</div>
+            <div class="tip-text">Entrepreneurs are not always rich or famous — they are everyday problem-solvers in your community!</div>
+        </div>
+    </div>
+
+    <div class="step-box">
+        <div class="step-title">ELABORATE - Imagine & Share</div>
+        <div class="step-content">
+            <p>Imagine there were no entrepreneurs in your community. What would be missing?</p>
+            <ul>
+                <li>Would you have fresh bread in the morning?</li>
+                <li>Who would repair your shoes or sew your uniform?</li>
+                <li>Where would you buy pure water or phone credit?</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="reflection-box">
+        <div class="reflection-header">
+            <div class="reflection-icon">⭐</div>
+            <div class="reflection-label">Daily Reflection</div>
+        </div>
+        <div class="reflection-prompt">Fill in the blank: An entrepreneur is</div>
+        <div class="work-lines"></div>
+        <div class="work-lines"></div>
+        <div class="work-lines"></div>
+    </div>
+
+    <div class="work-area">
+        <div class="work-area-header">My Creation Today</div>
+        <ul class="checklist">
+            <li class="checklist-item">My drawing or list of 3 entrepreneurs</li>
+            <li class="checklist-item">My sentence completing "An entrepreneur is…"</li>
+        </ul>
+        <div class="work-space">
+            <div class="work-space-hint">Draw or write your work here</div>
+        </div>
+    </div>
+</div>
+
+<!-- WEEK 1 - DAY 1 FINAL PAGE -->
+<div class="page">
+    <div class="parent-section">
+        <div class="parent-section-header">Parent / Tutor Conversation Starters</div>
+        <div class="conversation-item">Can you show me 3 business owners in our neighborhood?</div>
+        <div class="conversation-item">Which business helps our family the most?</div>
+        <div class="conversation-item">If you could start a business tomorrow, what would you sell?</div>
+    </div>
+
+    <div class="career-nugget">
+        <div class="career-nugget-header">💼 Career Nugget</div>
+        <div class="career-nugget-text">
+            Every big company started small. <strong>Dr. Patricia Poku-Diaby</strong> started making chocolate in her kitchen in Ghana. Today, her company <strong>Niche Cocoa</strong> exports premium Ghanaian chocolate to Europe and America. Your small idea today could grow into something huge tomorrow.
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-logo">RETEC AFRICA</div>
+        <div class="footer-tagline">Building Ghana's Next Generation of Entrepreneurs</div>
+        <div class="footer-website">www.retec-africa.netlify.app</div>
+    </div>
+</div>
+
+<!-- WEEK 1 - DAY 2 -->
+<div class="page">
+    <div class="day-section">
+        <div class="day-header">
+            <div class="day-number">02</div>
+            <div class="day-title">
+                <h2>Types of Businesses in My Community</h2>
+            </div>
+        </div>
+
+        <div class="learning-goal">
+            <div class="label">Learning Goal</div>
+            <div class="goal-text">Today, I will explore different types of businesses and discover which type interests me most.</div>
+        </div>
+
+        <div class="definitions">
+            <h3>Quick Definitions</h3>
+            <div class="definition-item">
+                <span class="def-term">Product-Based Business:</span>
+                <span class="def-meaning">Selling things people can touch and use (bread, clothes, shoes).</span>
+            </div>
+            <div class="definition-item">
+                <span class="def-term">Service-Based Business:</span>
+                <span class="def-meaning">Helping people do things (haircuts, phone repairs, car washing).</span>
+            </div>
+            <div class="definition-item">
+                <span class="def-term">Online Business:</span>
+                <span class="def-meaning">Selling products or services using the internet or mobile phones.</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">Discovery Steps</div>
+
+            <div class="step-box">
+                <div class="step-title">ENGAGE - Think & Match</div>
+                <div class="step-content">
+                    <p>Look at these businesses. Which ones sell products? Which ones sell services?</p>
+                    <ul>
+                        <li>Chop bar</li>
+                        <li>Hairdresser</li>
+                        <li>Mobile money agent</li>
+                        <li>Shoe maker</li>
+                        <li>Mechanic</li>
+                        <li>Pure water seller</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-box">
+                <div class="step-title">EXPLORE - My Activity Choices</div>
+                <div class="options-grid">
+                    <div class="option-box">
+                        <div class="option-label">Option A:</div>
+                        <div class="option-text">Draw a table with two columns: Product Business | Service Business. Fill it with at least 4 examples from your community.</div>
+                    </div>
+                    <div class="option-box">
+                        <div class="option-label">Option B:</div>
+                        <div class="option-text">Pick your favorite type of business and write 3 reasons why you like it.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- WEEK 1 - DAY 2 CONTINUED -->
+<div class="page">
+    <div class="step-box">
+        <div class="step-title">EXPLAIN - Learn Together</div>
+        <div class="step-content">
+            <p>Different businesses meet different needs — but all entrepreneurs solve problems.</p>
+            <p style="margin-top: 15px;"><strong>Example:</strong> In your neighborhood, you might need:</p>
+            <ul>
+                <li><strong>Product:</strong> Fresh bread from the bakery</li>
+                <li><strong>Service:</strong> Haircut from the barber</li>
+                <li><strong>Both:</strong> A restaurant (food is a product, but serving you is a service)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div class="tip-content">
+            <div class="tip-label">Tip:</div>
+            <div class="tip-text">Some businesses are both! A seamstress sells sewing services but may also sell ready-made clothes.</div>
+        </div>
+    </div>
+
+    <div class="step-box">
+        <div class="step-title">ELABORATE - Imagine & Share</div>
+        <div class="step-content">
+            <p>Which type of business would you like to start?</p>
+            <ul>
+                <li>What would you sell or do?</li>
+                <li>Who would be your customers?</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="reflection-box">
+        <div class="reflection-header">
+            <div class="reflection-icon">⭐</div>
+            <div class="reflection-label">Daily Reflection</div>
+        </div>
+        <div class="reflection-prompt">I would like to start a ________________________ business because</div>
+        <div class="work-lines"></div>
+        <div class="work-lines"></div>
+        <div class="work-lines"></div>
+    </div>
+
+    <div class="work-area">
+        <div class="work-area-header">My Work Area - Business Types</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Business</th>
+                    <th>Service Business</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="height: 50px;"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="height: 50px;"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="height: 50px;"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="height: 50px;"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- WEEK 1 - DAY 2 FINAL PAGE -->
+<div class="page">
+    <div class="parent-section">
+        <div class="parent-section-header">Parent / Tutor Conversation Starters</div>
+        <div class="conversation-item">Which business in our community makes the most money? Why do you think so?</div>
+        <div class="conversation-item">Can you think of a business that sells both products and services?</div>
+        <div class="conversation-item">What business would help our community the most right now?</div>
+    </div>
+
+    <div class="career-nugget">
+        <div class="career-nugget-header">💼 Career Nugget</div>
+        <div class="career-nugget-text">
+            <strong>Nana Boakye</strong> started <strong>Nandimobile</strong>, a mobile phone repair business in Accra. He began fixing phones in a small kiosk and now has multiple branches across Ghana. Many successful Ghanaian entrepreneurs started with one type of business and then expanded. Always look for ways to grow!
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-logo">RETEC AFRICA</div>
+        <div class="footer-tagline">Building Ghana's Next Generation of Entrepreneurs</div>
+        <div class="footer-website">www.retec-africa.netlify.app</div>
+    </div>
+</div>
+
+<!-- WEEK 1 - DAY 3 -->
+<div class="page">
+    <div class="day-section">
+        <div class="day-header">
+            <div class="day-number">03</div>
+            <div class="day-title">
+                <h2>Finding Problems to Solve</h2>
+                <div class="subtitle">Business Opportunities</div>
+            </div>
+        </div>
+
+        <div class="learning-goal">
+            <div class="label">Learning Goal</div>
+            <div class="goal-text">Today, I will learn how to spot business opportunities by finding problems in my community and thinking of solutions.</div>
+        </div>
+
+        <div class="definitions">
+            <h3>Quick Definitions</h3>
+            <div class="definition-item">
+                <span class="def-term">Need:</span>
+                <span class="def-meaning">Something people must have to live comfortably (food, water, shelter, medicine, education).</span>
+            </div>
+            <div class="definition-item">
+                <span class="def-term">Want:</span>
+                <span class="def-meaning">Something people would like to have but can live without (toys, ice cream, fancy shoes).</span>
+            </div>
+            <div class="definition-item">
+                <span class="def-term">Business Opportunity:</span>
+                <span class="def-meaning">A problem or need that you can solve by selling a product or service.</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">Discovery Steps</div>
+
+            <div class="step-box">
+                <div class="step-title">ENGAGE - Observation Challenge</div>
+                <div class="step-content">
+                    <p>Walk through your community or school. What problems do you see?</p>
+                    <ul>
+                        <li>Long queue for water?</li>
+                        <li>Students hungry during break time?</li>
+                        <li>Dirty streets with no waste bins?</li>
+                        <li>People walking far to buy phone credit?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-box">
+                <div class="step-title">EXPLORE - My Activity Choices</div>
+                <div class="options-grid">
+                    <div class="option-box">
+                        <div class="option-label">Option A:</div>
+                        <div class="option-text">Draw or write 5 problems you noticed in your community or school.</div>
+                    </div>
+                    <div class="option-box">
+                        <div class="option-label">Option B:</div>
+                        <div class="option-text">Pick 1 big problem and write 3 ways you could help solve it with a business.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- WEEK 1 - DAY 3 CONTINUED -->
+<div class="page">
+    <div class="step-box">
+        <div class="step-title">EXPLAIN - Learn Together</div>
+        <div class="step-content">
+            <p>Entrepreneurs look for problems and turn them into business opportunities.</p>
+            <p style="margin-top: 15px;"><strong>Example:</strong></p>
+            <ul>
+                <li><strong>Problem:</strong> Students are thirsty during break time.</li>
+                <li><strong>Business Solution:</strong> Sell cold pure water or sobolo at school.</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Another Example:</strong></p>
+            <ul>
+                <li><strong>Problem:</strong> People travel far to buy phone credit.</li>
+                <li><strong>Business Solution:</strong> Become a mobile money or credit seller in your area.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div class="tip-content">
+            <div class="tip-label">Tip:</div>
+            <div class="tip-text">The best businesses solve real problems that many people face!</div>
+        </div>
+    </div>
+
+    <div class="step-box">
+        <div class="step-title">ELABORATE - Imagine & Share</div>
+        <div class="step-content">
+            <p>Pick one problem from your list. Answer these questions:</p>
+            <ul>
+                <li>Who is affected by this problem?</li>
+                <li>How can you solve it?</li>
+                <li>Would people pay for your solution?</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="reflection-box">
+        <div class="reflection-header">
+            <div class="reflection-icon">⭐</div>
+            <div class="reflection-label">Daily Reflection</div>
+        </div>
+        <div class="reflection-prompt">The biggest problem I can solve in my community is</div>
+        <div class="work-lines"></div>
+        <div class="reflection-prompt">and my solution is</div>
+        <div class="work-lines"></div>
+        <div class="work-lines"></div>
+    </div>
+
+    <div class="work-area">
+        <div class="work-area-header">My Work Area - Problems I See</div>
+        <div style="margin-top: 15px;">
+            <div><strong>1.</strong><div class="work-lines"></div></div>
+            <div><strong>2.</strong><div class="work-lines"></div></div>
+            <div><strong>3.</strong><div class="work-lines"></div></div>
+            <div><strong>4.</strong><div class="work-lines"></div></div>
+            <div><strong>5.</strong><div class="work-lines"></div></div>
+        </div>
+    </div>
+</div>
+
+<!-- WEEK 1 - DAY 3 FINAL PAGE -->
+<div class="page">
+    <div class="parent-section">
+        <div class="parent-section-header">Parent / Tutor Conversation Starters</div>
+        <div class="conversation-item">What problem in our home or community bothers you the most?</div>
+        <div class="conversation-item">If you had GH₵ 20, what small business could you start to solve a problem?</div>
+        <div class="conversation-item">Do you know anyone who started a business because they saw a problem?</div>
+    </div>
+
+    <div class="career-nugget">
+        <div class="career-nugget-header">💼 Career Nugget</div>
+        <div class="career-nugget-text">
+            <strong>Bright Simons</strong>, a Ghanaian innovator, co-founded <strong>mPedigree</strong> after seeing how fake medicines were killing people in Africa. His mobile-based solution now helps millions verify authentic medicines. He spotted a problem and created a life-saving business!
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-logo">RETEC AFRICA</div>
+        <div class="footer-tagline">Building Ghana's Next Generation of Entrepreneurs</div>
+        <div class="footer-website">www.retec-africa.netlify.app</div>
+    </div>
+</div>
+
+<!-- WEEK 1 - DAY 4 -->
+<div class="page">
+    <div class="day-section">
+        <div class="day-header">
+            <div class="day-number">04</div>
+            <div class="day-title">
+                <h2>My First Business Idea</h2>
+                <div class="subtitle">Planning & Resources</div>
+            </div>
+        </div>
+
+        <div class="learning-goal">
+            <div class="label">Learning Goal</div>
+            <div class="goal-text">Today, I will create my first simple business idea and list what I need to start it.</div>
+        </div>
+
+        <div class="definitions">
+            <h3>Quick Definitions</h3>
+            <div class="definition-item">
+                <span class="def-term">Business Idea:</span>
+                <span class="def-meaning">A plan for what you will sell and who will buy it.</span>
+            </div>
+            <div class="definition-item">
+                <span class="def-term">Resources:</span>
+                <span class="def-meaning">Things you need to start your business (money, materials, skills, time).</span>
+            </div>
+            <div class="definition-item">
+                <span class="def-term">Capital:</span>
+                <span class="def-meaning">The money needed to start a business.</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">Discovery Steps</div>
+
+            <div class="step-box">
+                <div class="step-title">ENGAGE - Story Prompt</div>
+                <div class="step-content">
+                    <p><strong>Akosua's Story:</strong></p>
+                    <p>Akosua noticed her classmates were always hungry during break. She decided to start selling small meat pies. She needed GH₵ 10 to buy flour and meat, a bowl to mix, and her mother's oven. Within one week, she made GH₵ 25!</p>
+                    <p style="margin-top: 10px;"><strong>Question:</strong> What did Akosua need to start her business?</p>
+                </div>
+            </div>
+
+            <div class="step-box">
+                <div class="step-title">EXPLORE - Learn the Steps</div>
+                <div class="step-content">
+                    <p><strong>To Start a Business, You Need:</strong></p>
+                    <ul>
+                        <li><strong>An Idea</strong> – What will you sell?</li>
+                        <li><strong>Resources</strong> – What materials, money, or help do you need?</li>
+                        <li><strong>Customers</strong> – Who will buy from you?</li>
+                        <li><strong>A Plan</strong> – How will you make and sell your product?</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- WEEK 1 - DAY 4 CONTINUED -->
+<div class="page">
+    <div class="step-box">
+        <div class="step-title">EXPLAIN - My Activity Choices</div>
+        <div class="options-grid">
+            <div class="option-box">
+                <div class="option-label">Option A:</div>
+                <div class="option-text">Fill out a simple business plan for your idea using the template below.</div>
+            </div>
+            <div class="option-box">
+                <div class="option-label">Option B:</div>
+                <div class="option-text">Draw your business idea and label all the things you need to start.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="step-box">
+        <div class="step-title">ELABORATE - Calculate Your Needs</div>
+        <div class="step-content">
+            <p>Think about your business idea. Answer:</p>
+            <ul>
+                <li>What will it cost to start? (Try to estimate in Ghana cedis)</li>
+                <li>Where will you get the money?</li>
+                <li>How much will you sell your product for?</li>
+                <li>How many customers do you need?</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="reflection-box">
+        <div class="reflection-header">
+            <div class="reflection-icon">⭐</div>
+            <div class="reflection-label">Daily Reflection</div>
+        </div>
+        <div class="reflection-prompt">The easiest part of planning my business is</div>
+        <div class="work-lines"></div>
+        <div class="reflection-prompt">The hardest part is</div>
+        <div class="work-lines"></div>
+    </div>
+
+    <div class="work-area">
+        <div class="work-area-header">My Simple Business Plan</div>
+        <div style="margin-top: 15px;">
+            <div><strong>1. My Business Name:</strong><div class="work-lines"></div></div>
+            <div><strong>2. What I Will Sell:</strong><div class="work-lines"></div></div>
+            <div><strong>3. My Customers (Who will buy?):</strong><div class="work-lines"></div></div>
+            <div><strong>4. My Selling Price:</strong> GH₵<div class="work-lines"></div></div>
+            <div><strong>5. Why People Will Buy From Me:</strong><div class="work-lines"></div></div>
+        </div>
+    </div>
+</div>
+
+<!-- WEEK 1 - DAY 4 RESOURCES TABLE PAGE -->
+<div class="page">
+    <div class="work-area">
+        <div class="work-area-header">Resources I Need</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item Needed</th>
+                    <th>Cost (GH₵)</th>
+                    <th>Where to Get It</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="height: 50px;"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="height: 50px;"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="height: 50px;"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="height: 50px;"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="parent-section">
+        <div class="parent-section-header">Parent / Tutor Conversation Starters</div>
+        <div class="conversation-item">Do you think my business idea can work? Why or why not?</div>
+        <div class="conversation-item">Can you help me find the resources I need?</div>
+        <div class="conversation-item">Do you know someone who could give me advice about starting small?</div>
+    </div>
+
+    <div class="career-nugget">
+        <div class="career-nugget-header">💼 Career Nugget</div>
+        <div class="career-nugget-text">
+            Before you spend money, test your idea! Ask 5 people if they would buy your product. If 4 say yes, you probably have a good idea. If most say no, change your plan. Smart entrepreneurs test before they invest.
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-logo">RETEC AFRICA</div>
+        <div class="footer-tagline">Building Ghana's Next Generation of Entrepreneurs</div>
+        <div class="footer-website">www.retec-africa.netlify.app</div>
+    </div>
+</div>
+
+<!-- WEEK 1 - DAY 5 -->
+<div class="page">
+    <div class="day-section">
+        <div class="day-header">
+            <div class="day-number">05</div>
+            <div class="day-title">
+                <h2>Values for Business Success</h2>
+                <div class="subtitle">Review & Goal Setting</div>
+            </div>
+        </div>
+
+        <div class="learning-goal">
+            <div class="label">Learning Goal</div>
+            <div class="goal-text">Today, I will review everything I learned this week, understand the values needed for business success, and set my first entrepreneurship goal.</div>
+        </div>
+
+        <div class="definitions">
+            <h3>Quick Definitions</h3>
+            <div class="definition-item">
+                <span class="def-term">Values:</span>
+                <span class="def-meaning">Important qualities that make you a good entrepreneur (honesty, hard work, respect, punctuality).</span>
+            </div>
+            <div class="definition-item">
+                <span class="def-term">Goal:</span>
+                <span class="def-meaning">Something you want to achieve in the future.</span>
+            </div>
+            <div class="definition-item">
+                <span class="def-term">Success:</span>
+                <span class="def-meaning">Reaching your goal while helping others and earning money.</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">Discovery Steps</div>
+
+            <div class="step-box">
+                <div class="step-title">ENGAGE - Quick Review Game</div>
+                <div class="step-content">
+                    <p>Say or write 1 thing you learned each day this week:</p>
+                    <ul>
+                        <li><strong>Day 1:</strong> Who entrepreneurs are <div class="work-lines"></div></li>
+                        <li><strong>Day 2:</strong> Types of businesses <div class="work-lines"></div></li>
+                        <li><strong>Day 3:</strong> Finding problems to solve <div class="work-lines"></div></li>
+                        <li><strong>Day 4:</strong> Planning my business idea <div class="work-lines"></div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- WEEK 1 - DAY 5 CONTINUED -->
+<div class="page">
+    <div class="step-box">
+        <div class="step-title">EXPLORE - Values That Matter</div>
+        <div class="step-content">
+            <p><strong>Good entrepreneurs have these values:</strong></p>
+            <ul>
+                <li><strong>Honesty</strong> – Always tell the truth to customers</li>
+                <li><strong>Hard Work</strong> – Work even when it's difficult</li>
+                <li><strong>Punctuality</strong> – Deliver on time, always</li>
+                <li><strong>Respect</strong> – Treat customers and helpers well</li>
+                <li><strong>Responsibility</strong> – Keep your promises</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Bad Business Practices to Avoid:</strong></p>
+            <ul>
+                <li>Cheating customers with wrong measurements</li>
+                <li>Selling expired or fake products</li>
+                <li>Being rude or disrespectful</li>
+                <li>Not keeping your word</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div class="tip-content">
+            <div class="tip-label">Tip:</div>
+            <div class="tip-text">Your reputation is your most valuable asset! Customers remember how you treat them and will come back if you are honest and respectful.</div>
+        </div>
+    </div>
+
+    <div class="step-box">
+        <div class="step-title">EXPLAIN - My Activity Choices</div>
+        <div class="options-grid">
+            <div class="option-box">
+                <div class="option-label">Option A:</div>
+                <div class="option-text">Draw yourself as an entrepreneur and write 3 values you will practice.</div>
+            </div>
+            <div class="option-box">
+                <div class="option-label">Option B:</div>
+                <div class="option-text">Write about one entrepreneur you know who shows good values and explain why you admire them.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="step-box">
+        <div class="step-title">ELABORATE - Goal Setting</div>
+        <div class="step-content">
+            <p><strong>Complete these sentences:</strong></p>
+            <p>One day, I want to start a business that<div class="work-lines"></div></p>
+            <p>I will help people by<div class="work-lines"></div></p>
+            <p>To succeed, I will practice these 3 values:<div class="work-lines"></div></p>
+        </div>
+    </div>
+
+    <div class="reflection-box">
+        <div class="reflection-header">
+            <div class="reflection-icon">⭐</div>
+            <div class="reflection-label">Daily Reflection</div>
+        </div>
+        <div class="reflection-prompt">The most exciting thing I learned about entrepreneurship this week is</div>
+        <div class="work-lines"></div>
+        <div class="work-lines"></div>
+        <div class="work-lines"></div>
+    </div>
+</div>
+
+<!-- WEEK 1 - DAY 5 WORK AREA & SUMMARY -->
+<div class="page">
+    <div class="work-area">
+        <div class="work-area-header">My Entrepreneurship Goal</div>
+        <div style="margin-top: 15px;">
+            <div><strong>My Goal Statement:</strong><div class="work-lines"></div><div class="work-lines"></div></div>
+            <div><strong>My Favorite Lesson This Week:</strong><div class="work-lines"></div><div class="work-lines"></div></div>
+            <div><strong>3 Values I Will Practice:</strong></div>
+            <div>1.<div class="work-lines"></div></div>
+            <div>2.<div class="work-lines"></div></div>
+            <div>3.<div class="work-lines"></div></div>
+        </div>
+    </div>
+
+    <div class="parent-section">
+        <div class="parent-section-header">Parent / Tutor Conversation Starters</div>
+        <div class="conversation-item">What kind of entrepreneur do you want to be — or what problem do you want to solve?</div>
+        <div class="conversation-item">Can you show me your business plan from this week?</div>
+        <div class="conversation-item">What value do you think is most important for business success?</div>
+    </div>
+
+    <div class="career-nugget">
+        <div class="career-nugget-header">💼 Career Nugget</div>
+        <div class="career-nugget-text">
+            Every successful entrepreneur's journey starts with a dream. <strong>Sangu Delle</strong>, a Ghanaian-American entrepreneur, started <strong>Golden Palm Investments</strong> to invest in African businesses. He believes in hard work and integrity. Your goal today could be the first step toward the business that provides jobs, solves problems, and changes lives tomorrow. Start small, dream big!
+        </div>
+    </div>
+
+    <div class="summary-box">
+        <div class="summary-header">🎯 Week 1 Summary</div>
+        <div class="summary-content">
+            <p><strong>This week, you learned:</strong></p>
+            <ul class="summary-list">
+                <li>Who entrepreneurs are and what they do</li>
+                <li>Different types of businesses (product, service, online)</li>
+                <li>How to spot business opportunities by finding problems</li>
+                <li>How to plan a simple business idea</li>
+                <li>Important values for business success</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Next week, we will learn:</strong></p>
+            <ul class="summary-list">
+                <li>How to collect information from customers</li>
+                <li>How to use data to make smart decisions</li>
+                <li>How to budget and calculate costs</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-logo">RETEC AFRICA</div>
+        <div class="footer-tagline">Building Ghana's Next Generation of Entrepreneurs</div>
+        <div class="footer-website">www.retec-africa.netlify.app</div>
+    </div>
+</div>
+
+<!-- ==================== WEEK 2 ==================== -->
+<div class="page">
+    <div class="week-intro">
+        <div class="week-number">02</div>
+        <h1>Week 2</h1>
+        <h2>IDENTIFYING BUSINESS OPPORTUNITIES</h2>
+        <div class="theme">Learning to observe needs, collect data, and create smart business ideas</div>
+        <div class="career-glimpse">
+            <strong>Career Glimpse:</strong>
+            Market Researcher | Survey Analyst | Product Developer | Community Needs Assessor
+        </div>
+    </div>
+</div>
+
+<!-- WEEK 2 - DAY 1 -->
+<div class="page">
+    <div class="day-section">
+        <div class="day-header">
+            <div class="day-number">01</div>
+            <div class="day-title">
+                <h2>Observing Needs vs. Wants</h2>
+            </div>
+        </div>
+
+        <div class="learning-goal">
+            <div class="label">Learning Goal</div>
+            <div class="goal-text">Today, I will learn the difference between needs and wants, and understand why this matters for my business.</div>
+        </div>
+
+        <div class="definitions">
+            <h3>Quick Definitions</h3>
+            <div class="definition-item">
+                <span class="def-term">Need:</span>
+                <span class="def-meaning">Something people must have to survive or live comfortably (food, water, shelter, medicine, education).</span>
+            </div>
+            <div class="definition-item">
+                <span class="def-term">Want:</span>
+                <span class="def-meaning">Something people would like to have but can live without (toys, ice cream, jewelry, fancy clothes).</span>
+            </div>
+            <div class="definition-item">
+                <span class="def-term">Market Demand:</span>
+                <span class="def-meaning">How many people need or want what you plan to sell.</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">Discovery Steps</div>
+
+            <div class="step-box">
+                <div class="step-title">ENGAGE - Think & Discuss</div>
+                <div class="step-content">
+                    <p>Look at these items. Which are NEEDS and which are WANTS?</p>
+                    <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                        <li>Pure water</li>
+                        <li>Mobile phone</li>
+                        <li>Rice and stew</li>
+                        <li>PlayStation game</li>
+                        <li>School uniform</li>
+                        <li>Designer sneakers</li>
+                        <li>Medicine for malaria</li>
+                        <li>Chocolate</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-box">
+                <div class="step-title">EXPLORE - My Activity Choices</div>
+                <div class="options-grid">
+                    <div class="option-box">
+                        <div class="option-label">Option A:</div>
+                        <div class="option-text">Create a table with two columns: NEEDS | WANTS. List at least 5 items in each column from your daily life.</div>
+                    </div>
+                    <div class="option-box">
+                        <div class="option-label">Option B:</div>
+                        <div class="option-text">Interview 3 people in your home or neighborhood. Ask: "What do you need most right now?" Write their answers.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- WEEK 2 - DAY 1 CONTINUED -->
+<div class="page">
+    <div class="step-box">
+        <div class="step-title">EXPLAIN - Learn Together</div>
+        <div class="step-content">
+            <p><strong>Why This Matters for Business:</strong></p>
+            <p style="margin-top: 10px;">Selling <strong>NEEDS</strong> = More customers, steady sales (people must buy)<br>
+            Selling <strong>WANTS</strong> = Fewer customers, but can charge more (people buy when they have extra money)</p>
+            <p style="margin-top: 15px;"><strong>Example:</strong></p>
+            <ul>
+                <li>A pure water seller will always have customers (NEED)</li>
+                <li>A video game shop might struggle if people don't have extra money (WANT)</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Smart Business Tip:</strong> Many successful businesses turn WANTS into NEEDS!</p>
+            <ul>
+                <li>Mobile phones were once a WANT, now they are a NEED for business</li>
+                <li>Internet was once a WANT, now it's a NEED for education</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div class="tip-content">
+            <div class="tip-label">Tip:</div>
+            <div class="tip-text">Start with NEEDS to build a strong business. Add WANTS when your business is stable!</div>
+        </div>
+    </div>
+
+    <div class="step-box">
+        <div class="step-title">ELABORATE - Imagine & Share</div>
+        <div class="step-content">
+            <p>Think about your business idea from Week 1:</p>
+            <ul>
+                <li>Does it solve a NEED or a WANT?</li>
+                <li>Will people always buy it, or only when they have extra money?</li>
+                <li>Can you adjust your idea to solve a NEED?</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="reflection-box">
+        <div class="reflection-header">
+            <div class="reflection-icon">⭐</div>
+            <div class="reflection-label">Daily Reflection</div>
+        </div>
+        <div class="reflection-prompt">My business idea solves a ________________________ (need/want) because</div>
+        <div class="work-lines"></div>
+        <div class="work-lines"></div>
+        <div class="work-lines"></div>
+    </div>
+
+    <div class="work-area">
+        <div class="work-area-header">Needs vs. Wants in My Community</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>NEEDS</th>
+                    <th>WANTS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="height: 50px;"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="height: 50px;"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="height: 50px;"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="height: 50px;"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="height: 50px;"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- WEEK 2 - DAY 1 FINAL PAGE -->
+<div class="page">
+    <div class="parent-section">
+        <div class="parent-section-header">Parent / Tutor Conversation Starters</div>
+        <div class="conversation-item">What do we spend money on every week that we NEED?</div>
+        <div class="conversation-item">What do we buy sometimes that we WANT but could live without?</div>
+        <div class="conversation-item">If we had only GH₵ 50, what would we buy first — needs or wants?</div>
+    </div>
+
+    <div class="career-nugget">
+        <div class="career-nugget-header">💼 Career Nugget</div>
+        <div class="career-nugget-text">
+            The best entrepreneurs understand what people truly need. <strong>Esther Afua Ocloo</strong>, one of Ghana's first female entrepreneurs, started <strong>Nkulenu Industries</strong> making marmalade and other preserves. She focused on food—a basic NEED—and built a successful business that still exists today. When you solve a real need, customers will always come back.
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-logo">RETEC AFRICA</div>
+        <div class="footer-tagline">Building Ghana's Next Generation of Entrepreneurs</div>
+        <div class="footer-website">www.retec-africa.netlify.app</div>
+    </div>
+</div>
+
+<!-- WEEK 2 - DAY 2 -->
+<div class="page">
+    <div class="day-section">
+        <div class="day-header">
+            <div class="day-number">02</div>
+            <div class="day-title">
+                <h2>Collecting Data from Customers</h2>
+                <div class="subtitle">Simple Surveys</div>
+            </div>
+        </div>
+
+        <div class="learning-goal">
+            <div class="label">Learning Goal</div>
+            <div class="goal-text">Today, I will learn how to ask questions, collect information from people, and use data to make better business decisions.</div>
+        </div>
+
+        <div class="definitions">
+            <h3>Quick Definitions</h3>
+            <div class="definition-item">
+                <span class="def-term">Data:</span>
+                <span class="def-meaning">Information collected from people through questions, observations, or counting.</span>
+            </div>
+            <div class="definition-item">
+                <span class="def-term">Survey:</span>
+                <span class="def-meaning">A set of questions you ask people to learn what they think or need.</span>
+            </div>
+            <div class="definition-item">
+                <span class="def-term">Tally:</span>
+                <span class="def-meaning">A way to count answers by making marks (||||).</span>
+            </div>
+            <div class="definition-item">
+                <span class="def-term">Bar Graph:</span>
+                <span class="def-meaning">A chart that uses bars to show how many people chose each answer.</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">Discovery Steps</div>
+
+            <div class="step-box">
+                <div class="step-title">ENGAGE - Story Prompt</div>
+                <div class="step-content">
+                    <p><strong>Kwame's Problem:</strong></p>
+                    <p>Kwame wanted to sell snacks at school. He wasn't sure what to sell — meat pie, bofrot, popcorn, or kelewele. Instead of guessing, he asked 20 classmates: "Which snack would you buy at break time?"</p>
+                    <p style="margin-top: 10px;"><strong>Results:</strong></p>
+                    <ul>
+                        <li>Meat pie: |||| |||| (10 people)</li>
+                        <li>Bofrot: |||| (5 people)</li>
+                        <li>Popcorn: || (2 people)</li>
+                        <li>Kelewele: ||| (3 people)</li>
+                    </ul>
+                    <p style="margin-top: 10px;"><strong>What should Kwame sell? Why?</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- WEEK 2 - DAY 2 CONTINUED -->
+<div class="page">
+    <div class="step-box">
+        <div class="step-title">EXPLORE - My Activity Choices</div>
+        <div class="options-grid">
+            <div class="option-box">
+                <div class="option-label">Option A:</div>
+                <div class="option-text">Create your own survey. Write 1 question about a business idea and ask 10 people. Use tally marks to count their answers.</div>
+            </div>
+            <div class="option-box">
+                <div class="option-label">Option B:</div>
+                <div class="option-text">Use Kwame's data above to create a simple bar graph showing which snack is most popular.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="step-box">
+        <div class="step-title">EXPLAIN - Learn Together</div>
+        <div class="step-content">
+            <p><strong>Why Collect Data?</strong></p>
+            <ul>
+                <li>Know what customers really want (not just what you think they want)</li>
+                <li>Avoid wasting money on products people won't buy</li>
+                <li>Make smarter business decisions based on facts</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>How to Create a Simple Survey:</strong></p>
+            <ol style="margin-left: 20px;">
+                <li><strong>Write a clear question</strong><br>
+                Example: "Which drink would you buy on a hot day — water, Fanta, or sobolo?"</li>
+                <li><strong>Ask many people</strong> (at least 10-20)</li>
+                <li><strong>Record answers using tally marks</strong></li>
+                <li><strong>Count the totals</strong></li>
+                <li><strong>Make your decision based on results</strong></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div class="tip-content">
+            <div class="tip-label">Tip:</div>
+            <div class="tip-text">Always test your idea with real people before spending money!</div>
+        </div>
+    </div>
+
+    <div class="step-box">
+        <div class="step-title">ELABORATE - Your Turn to Survey</div>
+        <div class="step-content">
+            <p>Choose one of these business ideas or use your own:</p>
+            <ul>
+                <li>Selling food items at school</li>
+                <li>Offering shoe cleaning services</li>
+                <li>Selling phone accessories</li>
+            </ul>
+            <p style="margin-top: 10px;">Create a survey question and ask at least 5 people today.</p>
+        </div>
+    </div>
+
+    <div class="reflection-box">
+        <div class="reflection-header">
+            <div class="reflection-icon">⭐</div>
+            <div class="reflection-label">Daily Reflection</div>
+        </div>
+        <div class="reflection-prompt">The most important thing I learned about collecting data is</div>
+        <div class="work-lines"></div>
+        <div class="work-lines"></div>
+        <div class="work-lines"></div>
+    </div>
+</div>
+
+<!-- WEEK 2 - DAY 2 WORK AREA -->
+<div class="page">
+    <div class="work-area">
+        <div class="work-area-header">My Survey</div>
+        <div style="margin-top: 15px;">
+            <div><strong>Question:</strong><div class="work-lines"></div><div class="work-lines"></div></div>
+        </div>
+        <table style="margin-top: 20px;">
+            <thead>
+                <tr>
+                    <th>Answer Choice</th>
+                    <th>Tally Marks</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="height: 50px;"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="height: 50px;"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="height: 50px;"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="height: 50px;"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="margin-top: 15px;">
+            <div><strong>What the data tells me:</strong><div class="work-lines"></div><div class="work-lines"></div></div>
+        </div>
+    </div>
+
+    <div class="parent-section">
+        <div class="parent-section-header">Parent / Tutor Conversation Starters</div>
+        <div class="conversation-item">Can we survey our neighbors about what they need most?</div>
+        <div class="conversation-item">What question should I ask to test my business idea?</div>
+        <div class="conversation-item">Do you make decisions at work based on asking people questions?</div>
+    </div>
+
+    <div class="career-nugget">
+        <div class="career-nugget-header">💼 Career Nugget</div>
+        <div class="career-nugget-text">
+            Big companies spend millions on surveys and market research. You can do it for free! The simple act of asking "Would you buy this?" can save you from making expensive mistakes. <strong>Kwabena Adjei</strong>, founder of <strong>Kasapreko</strong> (makers of Alomo Bitters), tested his products with local customers before expanding nationwide. Listen to your customers first!
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-logo">RETEC AFRICA</div>
+        <div class="footer-tagline">Building Ghana's Next Generation of Entrepreneurs</div>
+        <div class="footer-website">www.retec-africa.netlify.app</div>
+    </div>
+</div>
+
+<!-- WEEK 2 - DAY 3 -->
+<div class="page">
+    <div class="day-section">
+        <div class="day-header">
+            <div class="day-number">03</div>
+            <div class="day-title">
+                <h2>Turning Data Into Ideas</h2>
+                <div class="subtitle">Brainstorming Solutions</div>
+            </div>
+        </div>
+
+        <div class="learning-goal">
+            <div class="label">Learning Goal</div>
+            <div class="goal-text">Today, I will use the data I collected to generate smart business ideas that match what people really need.</div>
+        </div>
+
+        <div class="definitions">
+            <h3>Quick Definitions</h3>
+            <div class="definition-item">
+                <span class="def-term">Brainstorming:</span>
+                <span class="def-meaning">Thinking of many different ideas quickly without judging them.</span>
+            </div>
+            <div class="definition-item">
+                <span class="def-term">Business Opportunity:</span>
+                <span class="def-meaning">A need or problem you discovered that you can solve for money.</span>
+            </div>
+            <div class="definition-item">
+                <span class="def-term">Product-Market Fit:</span>
+                <span class="def-meaning">When what you sell matches exactly what customers want to buy.</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">Discovery Steps</div>
+
+            <div class="step-box">
+                <div class="step-title">ENGAGE - Review Your Data</div>
+                <div class="step-content">
+                    <p>Look at the survey results from yesterday (yours or Kwame's example):</p>
+                    <ul>
+                        <li>What did most people choose?</li>
+                        <li>Were you surprised by any answers?</li>
+                        <li>What does this tell you about what to sell?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-box">
+                <div class="step-title">EXPLORE - My Activity Choices</div>
+                <div class="options-grid">
+                    <div class="option-box">
+                        <div class="option-label">Option A:</div>
+                        <div class="option-text">Based on your survey data, brainstorm 3 different business ideas. For each idea, write what you will sell, why people will buy it, and how much it might cost to start.</div>
+                    </div>
+                    <div class="option-box">
+                        <div class="option-label">Option B:</div>
+                        <div class="option-text">Create a "Problem-Solution Map" — draw or write 3 problems people mentioned in your survey, and next to each problem, write your business solution.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- WEEK 2 - DAY 3 CONTINUED -->
+<div class="page">
+    <div class="step-box">
+        <div class="step-title">EXPLAIN - Learn Together</div>
+        <div class="step-content">
+            <p><strong>From Data to Business Idea:</strong></p>
+            <p style="margin-top: 10px;"><strong>Step 1:</strong> Look at your survey results — what got the most votes?</p>
+            <p><strong>Step 2:</strong> Ask yourself:</p>
+            <ul>
+                <li>Can I afford to make/buy this?</li>
+                <li>Do I have the skills to provide this?</li>
+                <li>Will enough people buy it to make profit?</li>
+            </ul>
+            <p style="margin-top: 10px;"><strong>Step 3:</strong> Choose the best idea based on:</p>
+            <ul>
+                <li>Highest demand (most people want it)</li>
+                <li>Lowest cost to start</li>
+                <li>Easiest for you to do</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Example:</strong></p>
+            <p><strong>Survey Result:</strong> 15 out of 20 students want cold drinks during break time.</p>
+            <p style="margin-top: 10px;"><strong>Business Ideas:</strong></p>
+            <ol style="margin-left: 20px;">
+                <li>Sell Fan Ice (cheap to buy, easy to carry)</li>
+                <li>Sell bottled water (everyone needs it)</li>
+                <li>Make fresh sobolo (takes time but higher profit)</li>
+            </ol>
+            <p style="margin-top: 10px;"><strong>Best Choice for a beginner:</strong> Fan Ice or water (simple, low cost, high demand)</p>
+        </div>
+    </div>
+
+    <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div class="tip-content">
+            <div class="tip-label">Tip:</div>
+            <div class="tip-text">Don't try to sell everything! Focus on the ONE thing people want most.</div>
+        </div>
+    </div>
+
+    <div class="step-box">
+        <div class="step-title">ELABORATE - Test Your Idea</div>
+        <div class="step-content">
+            <p>Before you start, ask yourself:</p>
+            <ol style="margin-left: 20px;">
+                <li><strong>Demand Test:</strong> Did at least half the people say they would buy this?</li>
+                <li><strong>Money Test:</strong> Do I have enough money to start?</li>
+                <li><strong>Skill Test:</strong> Do I know how to make or get this product?</li>
+                <li><strong>Time Test:</strong> Can I do this while still going to school?</li>
+            </ol>
+            <p style="margin-top: 10px;">If you answered YES to most questions, your idea is ready to test!</p>
+        </div>
+    </div>
+
+    <div class="reflection-box">
+        <div class="reflection-header">
+            <div class="reflection-icon">⭐</div>
+            <div class="reflection-label">Daily Reflection</div>
+        </div>
+        <div class="reflection-prompt">Based on my data, the best business idea for me is</div>
+        <div class="work-lines"></div>
+        <div class="reflection-prompt">because</div>
+        <div class="work-lines"></div>
+        <div class="work-lines"></div>
+    </div>
+</div>
+
+<!-- WEEK 2 - DAY 3 WORK AREA -->
+<div class="page">
+    <div class="work-area">
+        <div class="work-area-header">From Survey to Business Idea</div>
+        <div style="margin-top: 15px;">
+            <div style="margin-bottom: 20px;">
+                <strong>Idea 1:</strong>
+                <div>• What I'll sell:<div class="work-lines"></div></div>
+                <div>• Why people will buy:<div class="work-lines"></div></div>
+                <div>• Cost to start: GH₵<div class="work-lines"></div></div>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <strong>Idea 2:</strong>
+                <div>• What I'll sell:<div class="work-lines"></div></div>
+                <div>• Why people will buy:<div class="work-lines"></div></div>
+                <div>• Cost to start: GH₵<div class="work-lines"></div></div>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <strong>Idea 3:</strong>
+                <div>• What I'll sell:<div class="work-lines"></div></div>
+                <div>• Why people will buy:<div class="work-lines"></div></div>
+                <div>• Cost to start: GH₵<div class="work-lines"></div></div>
+            </div>
+            <div>
+                <strong>My best idea is:</strong><div class="work-lines"></div>
+                <strong>because:</strong><div class="work-lines"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="parent-section">
+        <div class="parent-section-header">Parent / Tutor Conversation Starters</div>
+        <div class="conversation-item">Which of my 3 ideas do you think will work best? Why?</div>
+        <div class="conversation-item">Can you help me think of problems in our area that need solutions?</div>
+        <div class="conversation-item">Do you know anyone who started a business based on what customers told them?</div>
+    </div>
+
+    <div class="career-nugget">
+        <div class="career-nugget-header">💼 Career Nugget</div>
+        <div class="career-nugget-text">
+            <strong>Kojo Boakye</strong>, founder of <strong>Horseman Shoes</strong> in Ghana, asked people what they wanted in affordable quality shoes. Their answers led him to create a successful local shoe brand. Always listen to your customers — they will tell you exactly what to sell!
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-logo">RETEC AFRICA</div>
+        <div class="footer-tagline">Building Ghana's Next Generation of Entrepreneurs</div>
+        <div class="footer-website">www.retec-africa.netlify.app</div>
+    </div>
+</div>
+
+<!-- WEEK 2 - DAY 4 -->
+<div class="page">
+    <div class="day-section">
+        <div class="day-header">
+            <div class="day-number">04</div>
+            <div class="day-title">
+                <h2>Creating My Business Opportunity Map</h2>
+            </div>
+        </div>
+
+        <div class="learning-goal">
+            <div class="label">Learning Goal</div>
+            <div class="goal-text">Today, I will organize all my findings into a clear Business Opportunity Map that shows who my customers are, what they need, and how I will help them.</div>
+        </div>
+
+        <div class="definitions">
+            <h3>Quick Definitions</h3>
+            <div class="definition-item">
+                <span class="def-term">Target Customer:</span>
+                <span class="def-meaning">The specific group of people who will buy from you (students, mothers, traders, children).</span>
+            </div>
+            <div class="definition-item">
+                <span class="def-term">Value Proposition:</span>
+                <span class="def-meaning">The special reason why people should buy from YOU and not someone else.</span>
+            </div>
+            <div class="definition-item">
+                <span class="def-term">Competition:</span>
+                <span class="def-meaning">Other people or businesses selling similar products.</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">Discovery Steps</div>
+
+            <div class="step-box">
+                <div class="step-title">ENGAGE - Think About Your Customer</div>
+                <div class="step-content">
+                    <p>Close your eyes and imagine your first customer:</p>
+                    <ul>
+                        <li>How old are they?</li>
+                        <li>What problem do they have?</li>
+                        <li>Why will they choose to buy from you?</li>
+                        <li>How much money can they spend?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-box">
+                <div class="step-title">EXPLORE - My Activity Choices</div>
+                <div class="options-grid">
+                    <div class="option-box">
+                        <div class="option-label">Option A:</div>
+                        <div class="option-text">Fill out the Business Opportunity Map template on the next page with your business idea.</div>
+                    </div>
+                    <div class="option-box">
+                        <div class="option-label">Option B:</div>
+                        <div class="option-text">Draw a picture of your ideal customer and write a story about how your business solves their problem.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- WEEK 2 - DAY 4 CONTINUED -->
+<div class="page">
+    <div class="step-box">
+        <div class="step-title">EXPLAIN - Learn Together</div>
+        <div class="step-content">
+            <p><strong>The 5 Key Questions Every Business Must Answer:</strong></p>
+            <ol style="margin-left: 20px;">
+                <li><strong>WHO</strong> are my customers? (students, workers, mothers, youth)</li>
+                <li><strong>WHAT</strong> do they need? (food, water, clothes, entertainment, services)</li>
+                <li><strong>WHY</strong> will they buy from me? (cheaper, faster, better quality, closer)</li>
+                <li><strong>WHERE</strong> will I sell? (school, market, neighborhood, online)</li>
+                <li><strong>HOW MUCH</strong> will they pay? (GH₵ 1, GH₵ 5, GH₵ 10)</li>
+            </ol>
+            <p style="margin-top: 15px;"><strong>Example: Ama's Pure Water Business</strong></p>
+            <ul>
+                <li><strong>WHO:</strong> Students at her school (ages 12-16)</li>
+                <li><strong>WHAT:</strong> Cold pure water during break time</li>
+                <li><strong>WHY:</strong> She keeps water in a cooler (others sell warm water)</li>
+                <li><strong>WHERE:</strong> At school during break and lunch</li>
+                <li><strong>HOW MUCH:</strong> GH₵ 0.50 per sachet</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div class="tip-content">
+            <div class="tip-label">Tip:</div>
+            <div class="tip-text">The more specific you are about WHO you serve, the better you can serve them!</div>
+        </div>
+    </div>
+
+    <div class="step-box">
+        <div class="step-title">ELABORATE - Know Your Competition</div>
+        <div class="step-content">
+            <p><strong>Competition Check:</strong></p>
+            <p>Who else is solving this problem?</p>
+            <ul>
+                <li>What do they do well?</li>
+                <li>What do they do badly?</li>
+                <li>How can you be DIFFERENT or BETTER?</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Example:</strong></p>
+            <ul>
+                <li>If 3 people already sell water at school, maybe you sell it COLD</li>
+                <li>If everyone sells meat pie, maybe you sell
